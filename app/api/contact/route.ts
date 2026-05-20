@@ -170,7 +170,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: `"Portafolio Diego Aguirre" <${process.env.GMAIL_USER}>`,
-      to: "diegoroman344z@gmail.com",
+      to: process.env.GMAIL_USER,
       replyTo: email,
       subject: `Nuevo mensaje desde tu portafolio — ${email}`,
       html: buildEmailHtml(email, message),
