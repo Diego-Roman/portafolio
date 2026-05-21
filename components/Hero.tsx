@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 export default function Hero() {
@@ -42,6 +43,22 @@ export default function Hero() {
           <div className="h-px w-20 bg-gradient-to-r from-violet-500/50 via-fuchsia-500/30 to-transparent" />
           <div className="w-1 h-1 rounded-full bg-fuchsia-500/60" />
           <div className="h-px w-10 bg-gradient-to-l from-transparent to-cyan-500/40" />
+        </div>
+
+        {/* Profile photo */}
+        <div className="flex justify-center mb-8">
+          <div className="rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 p-[3px]">
+            <div className="rounded-full overflow-hidden w-40 h-40">
+              <Image
+                src="/profile.jpeg"
+                alt="Diego Aguirre"
+                width={160}
+                height={160}
+                className="object-cover w-full h-full"
+                priority
+              />
+            </div>
+          </div>
         </div>
 
         {/* Name */}
