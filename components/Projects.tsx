@@ -1,4 +1,4 @@
-import { Bot, BarChart3, Globe, ExternalLink } from "lucide-react";
+import { Bot, BarChart3, Globe, ExternalLink, Package } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface Project {
@@ -16,21 +16,40 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    icon: Package,
+    gradient: "from-cyan-600 to-emerald-500",
+    badge: "API B2B · Backend IA",
+    badgeStyle: "bg-cyan-500/10 text-cyan-400 border-cyan-500/25",
+    title: "SmartStock-AI-Backend",
+    problem:
+      "Las empresas B2B carecen de herramientas para auditar automáticamente el sentimiento y urgencia en reseñas de clientes, forzando revisiones manuales que retrasan decisiones críticas de catálogo e inventario.",
+    solution:
+      "API REST construida con FastAPI y Supabase que procesa reseñas mediante LLMs multi-proveedor vía OpenRouter, clasificando sentimiento, extrayendo quejas clave y asignando urgencia — con pipeline resiliente ante fallos de IA y auditoría completa de costos por token.",
+    highlights: [
+      "Arquitectura modelo-agnóstica: swap de LLM vía .env sin modificar código (Gemini, Claude, GPT-4o)",
+      "Pipeline resiliente: fallos de LLM no bloquean el flujo — reseñas pendientes con procesado=false",
+      "Auditoría de costos IA: tokens consumidos y modelo registrados por petición",
+    ],
+    tags: ["FastAPI", "Python 3.12", "Supabase", "PostgreSQL", "OpenRouter", "Pydantic v2", "RLS"],
+    link: "https://github.com/Diego-Roman/SmartStock-AI-Backend",
+  },
+  {
     icon: Bot,
     gradient: "from-violet-600 to-cyan-500",
-    badge: "IA + Automatización",
+    badge: "IA + Automatización · Logística",
     badgeStyle: "bg-violet-500/10 text-violet-400 border-violet-500/25",
-    title: "Asistente de Logística con IA",
+    title: "Courier-AI: Logistics Assistant",
     problem:
-      "Las empresas de logística perdían horas rastreando envíos manualmente y respondiendo consultas repetitivas a través de múltiples canales dispersos.",
+      "Las empresas courier perdían horas respondiendo consultas repetitivas de cotización y rastreo en múltiples canales, sin capacidad de escalar la atención sin aumentar el equipo humano.",
     solution:
-      "Sistema automatizado de rastreo de envíos con integración de flujos en WhatsApp y correos electrónicos, complementado con un panel de control web en tiempo real que centraliza toda la operación.",
+      "Sistema híbrido IA + agente humano que automatiza cotizaciones de flete (aéreo y marítimo) y rastreo de paquetes vía WhatsApp y Telegram, con panel de live chat en tiempo real y handoff transparente al asesor cuando la IA detecta su límite.",
     highlights: [
-      "Reducción del 80% en consultas manuales",
-      "Notificaciones automáticas multicanal en tiempo real",
-      "Panel de control centralizado con métricas clave",
+      "Agente contextual con restricciones de importación por país y cálculo volumétrico en tiempo real",
+      "Filtro anti-spam, verificación de bans en BD y sanitización de prompts por diseño",
+      "Dashboard de live chat con autenticación Supabase — la IA pausa cuando interviene el humano",
     ],
-    tags: ["n8n", "WhatsApp API", "Next.js", "Python", "Supabase", "OpenAI"],
+    tags: ["n8n", "WhatsApp Cloud API", "Telegram API", "OpenAI", "OpenRouter", "Supabase", "JavaScript", "Vercel"],
+    link: "https://github.com/Diego-Roman/omega-ai-logistics-assistant",
   },
   {
     icon: BarChart3,
