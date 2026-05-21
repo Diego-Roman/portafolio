@@ -92,19 +92,19 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[42rem] h-[42rem] bg-blue-600/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[42rem] h-[42rem] bg-violet-600/6 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         {/* Label */}
-        <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">
+        <p className="text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">
           Contacto
         </p>
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-6">
           ¿Listo para llevar{" "}
-          <span className="animate-gradient-x bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-400 bg-clip-text text-transparent">
+          <span className="animate-gradient-x bg-gradient-to-r from-violet-400 via-fuchsia-300 to-cyan-400 bg-clip-text text-transparent">
             tu proyecto al siguiente nivel?
           </span>
         </h2>
@@ -119,10 +119,10 @@ export default function Contact() {
           {isSuccess ? (
             /* ── Success card ── */
             <div className="relative flex flex-col items-center gap-5 px-8 py-12 rounded-2xl border border-emerald-500/25 bg-slate-900/80 backdrop-blur-sm overflow-hidden shadow-2xl shadow-emerald-500/5">
-              {/* Subtle glow behind the card */}
               <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none" />
+              <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-violet-500/40 rounded-tl-2xl pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-violet-500/40 rounded-br-2xl pointer-events-none" />
 
-              {/* Animated check ring */}
               <div className="relative flex items-center justify-center">
                 <span className="absolute w-20 h-20 rounded-full bg-emerald-500/15 animate-ping" />
                 <div className="relative w-16 h-16 rounded-full bg-emerald-500/10 border-2 border-emerald-500/30 flex items-center justify-center">
@@ -130,7 +130,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Text */}
               <div className="relative text-center">
                 <h3 className="text-xl font-bold text-white mb-2">
                   ¡Mensaje enviado con éxito!
@@ -140,8 +139,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              {/* Decorative line */}
-              <div className="w-32 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
+              <div className="w-32 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
 
               <p className="relative text-slate-600 text-xs">
                 Revisa tu carpeta de enviados para confirmar
@@ -155,7 +153,7 @@ export default function Contact() {
                   htmlFor="email"
                   className="flex items-center gap-2 text-slate-400 text-sm font-medium mb-2"
                 >
-                  <Mail className="w-4 h-4 text-blue-400" />
+                  <Mail className="w-4 h-4 text-violet-400" />
                   Correo electrónico
                 </label>
                 <input
@@ -166,7 +164,7 @@ export default function Contact() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@correo.com"
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-violet-900/50 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 transition-colors duration-200"
                 />
               </div>
 
@@ -185,14 +183,14 @@ export default function Contact() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Cuéntame sobre tu proyecto o idea..."
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-violet-900/50 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 transition-colors duration-200 resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group flex items-center justify-center gap-2 w-full px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-base hover:shadow-2xl hover:shadow-blue-500/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none"
+                className="group flex items-center justify-center gap-2 w-full px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white font-semibold text-base hover:shadow-2xl hover:shadow-violet-500/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none"
               >
                 {isSubmitting ? (
                   <>
@@ -229,9 +227,9 @@ export default function Contact() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 max-w-sm mx-auto mb-10">
-          <div className="flex-1 h-px bg-slate-800" />
+          <div className="flex-1 h-px bg-violet-900/40" />
           <span className="text-slate-600 text-sm">o encuéntrame en</span>
-          <div className="flex-1 h-px bg-slate-800" />
+          <div className="flex-1 h-px bg-violet-900/40" />
         </div>
 
         {/* Social links */}
@@ -242,7 +240,7 @@ export default function Contact() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border border-slate-800 bg-slate-900/50 text-slate-400 hover:text-white font-medium text-sm transition-all duration-200 ${color}`}
+              className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border border-violet-900/40 bg-slate-900/50 text-slate-400 hover:text-white font-medium text-sm transition-all duration-200 ${color}`}
             >
               {icon}
               {name}
@@ -251,10 +249,10 @@ export default function Contact() {
         </div>
 
         {/* Footer line */}
-        <div className="border-t border-slate-800/60 pt-8">
+        <div className="border-t border-violet-900/30 pt-8">
           <p className="text-slate-600 text-sm" suppressHydrationWarning>
             © {new Date().getFullYear()} Diego Aguirre · Construido con{" "}
-            <span className="text-blue-500">Next.js</span> &amp;{" "}
+            <span className="text-violet-500">Next.js</span> &amp;{" "}
             <span className="text-cyan-500">Tailwind CSS</span>
           </p>
         </div>

@@ -8,7 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-space-grotesk);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -19,22 +19,53 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), Arial, Helvetica, sans-serif;
 }
 
+/* ── Anime dot-grid background ──────────────────────────────── */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(139, 92, 246, 0.18) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Neon glow helpers ──────────────────────────────────────── */
+.glow-violet {
+  box-shadow:
+    0 0 14px rgba(139, 92, 246, 0.50),
+    0 0 32px rgba(139, 92, 246, 0.18);
+}
+.glow-cyan {
+  box-shadow:
+    0 0 14px rgba(34, 211, 238, 0.50),
+    0 0 32px rgba(34, 211, 238, 0.18);
+}
+.glow-fuchsia {
+  box-shadow:
+    0 0 14px rgba(232, 121, 249, 0.50),
+    0 0 32px rgba(232, 121, 249, 0.18);
+}
+
+/* ── Animations ─────────────────────────────────────────────── */
 @keyframes gradient-x {
   0%, 100% { background-position: 0% 50%; }
   50%       { background-position: 100% 50%; }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-12px); }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; }
-  50%       { opacity: 0.8; }
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.80; }
+}
+
+@keyframes scan-line {
+  0%   { top: 0%;   opacity: 0; }
+  5%   { opacity: 0.55; }
+  95%  { opacity: 0.55; }
+  100% { top: 100%; opacity: 0; }
 }
 
 .animate-gradient-x {
@@ -50,6 +81,24 @@ body {
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
-::-webkit-scrollbar        { width: 5px; }
-::-webkit-scrollbar-track  { background: #0b0f1a; }
-::-webkit-scrollbar-thumb  { background: #3b82f6; border-radius: 4px; }
+.animate-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(139, 92, 246, 0.55) 40%,
+    rgba(34, 211, 238, 0.55) 60%,
+    transparent 100%
+  );
+  animation: scan-line 6s linear infinite;
+  pointer-events: none;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar             { width: 4px; }
+::-webkit-scrollbar-track       { background: #0b0f1a; }
+::-webkit-scrollbar-thumb       { background: #7c3aed; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a78bfa; }

@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0b0f1a]/90 backdrop-blur-xl border-b border-slate-800/60 shadow-xl shadow-black/20"
+          ? "bg-[#0b0f1a]/90 backdrop-blur-xl border-b border-violet-900/40 shadow-xl shadow-violet-950/20"
           : "bg-transparent"
       }`}
     >
@@ -33,11 +33,11 @@ export default function Navbar() {
 
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg shadow-blue-500/30">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg shadow-violet-500/30">
               <Code2 className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold text-lg text-white">
-              Diego<span className="text-blue-400">.</span>
+              Diego<span className="text-violet-400">.</span>
               <span className="text-slate-400 font-normal">dev</span>
             </span>
           </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
                 className="relative text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 group"
               >
                 {label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300 rounded-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-fuchsia-400 group-hover:w-full transition-all duration-300 rounded-full" />
               </a>
             ))}
           </div>
@@ -60,12 +60,12 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center px-5 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-200"
+              className="hidden md:inline-flex items-center px-5 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white hover:shadow-lg hover:shadow-violet-500/30 hover:scale-105 transition-all duration-200"
             >
               Hablemos
             </a>
             <button
-              className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-colors"
+              className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-violet-900/60 text-slate-400 hover:text-white hover:border-violet-700 transition-colors"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -81,13 +81,13 @@ export default function Navbar() {
           mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-[#0d1224]/98 backdrop-blur-xl border-b border-slate-800 px-4 pt-2 pb-4 space-y-1">
+        <div className="bg-[#0d0e1f]/98 backdrop-blur-xl border-b border-violet-900/40 px-4 pt-2 pb-4 space-y-1">
           {NAV_LINKS.map(({ href, label }) => (
             <a
               key={href}
               href={href}
               onClick={() => setMobileOpen(false)}
-              className="flex items-center py-3 px-2 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors font-medium"
+              className="flex items-center py-3 px-2 text-slate-300 hover:text-white rounded-lg hover:bg-violet-950/40 transition-colors font-medium"
             >
               {label}
             </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-2 flex items-center justify-center py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold"
+            className="mt-2 flex items-center justify-center py-3 rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white font-semibold"
           >
             Hablemos
           </a>

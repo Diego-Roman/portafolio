@@ -22,12 +22,12 @@ export default function About() {
 
           {/* Left — Text */}
           <div>
-            <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-violet-400 text-sm font-semibold uppercase tracking-widest mb-3">
               Sobre Mí
             </p>
             <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight mb-6">
               Soluciones digitales{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
                 de extremo a extremo
               </span>
             </h2>
@@ -60,17 +60,23 @@ export default function About() {
 
           {/* Right — Visual card */}
           <div>
-            <div className="relative rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm p-8 overflow-hidden">
+            <div className="relative rounded-2xl border border-violet-900/40 bg-slate-900/50 backdrop-blur-sm p-8 overflow-hidden hover:border-violet-700/60 transition-colors duration-300">
+              {/* Corner accents — EVA HUD style */}
+              <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-violet-500/50 rounded-tl-xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-violet-500/50 rounded-tr-xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-violet-500/50 rounded-bl-xl pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-violet-500/50 rounded-br-xl pointer-events-none" />
+
               {/* Inner glow */}
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-600/8 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -top-12 -right-12 w-48 h-48 bg-violet-600/8 rounded-full blur-3xl pointer-events-none" />
 
               <div className="relative space-y-5">
                 {PILLARS.map(({ emoji, title, desc }) => (
                   <div
                     key={title}
-                    className="group flex items-start gap-4 p-3 rounded-xl hover:bg-slate-800/40 transition-colors duration-200 cursor-default"
+                    className="group flex items-start gap-4 p-3 rounded-xl hover:bg-violet-950/40 transition-colors duration-200 cursor-default"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-slate-800 border border-slate-700 group-hover:border-blue-500/40 flex items-center justify-center text-xl flex-shrink-0 transition-colors duration-200">
+                    <div className="w-11 h-11 rounded-xl bg-slate-800 border border-violet-900/50 group-hover:border-violet-500/40 flex items-center justify-center text-xl flex-shrink-0 transition-colors duration-200">
                       {emoji}
                     </div>
                     <div>
