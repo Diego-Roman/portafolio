@@ -1,4 +1,4 @@
-import { Bot, BarChart3, Globe, ExternalLink, Package } from "lucide-react";
+import { Bot, BarChart3, Globe, ExternalLink, Package, Building } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface Project {
@@ -15,6 +15,25 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
+  {
+    icon: Building,
+    gradient: "from-purple-600 to-cyan-500",
+    badge: "SaaS PropTech · Microservicios",
+    badgeStyle: "bg-purple-900/50 text-purple-300 border-purple-700/50",
+    title: "Megumin Estate AI",
+    problem:
+      "El sector inmobiliario pierde horas leyendo contratos manuales, sufre errores en cálculos de ingresos multi-divisa, y carece de herramientas centralizadas para buscar datos específicos o redactar nuevos documentos ágilmente.",
+    solution:
+      "Plataforma Full-Stack que automatiza la extracción de datos de PDFs y calcula el canon agrupado por moneda. Integra un Asistente de IA interactivo capaz de chatear con la base de datos, buscar información al instante y redactar/generar nuevos contratos automáticamente.",
+    highlights: [
+      "Asistente Virtual IA (RAG) para búsqueda profunda, redacción y generación de PDFs",
+      "Motor financiero que segmenta y calcula ingresos multi-divisa en tiempo real",
+      "Gestor documental seguro con Next.js y almacenamiento estructurado",
+      "Arquitectura de microservicios (FastAPI + Next.js) con base de datos Neon",
+    ],
+    tags: ["Next.js", "FastAPI", "Python", "Neon", "Render", "OpenRouter"],
+    link: "https://github.com/Diego-Roman/Megumin-estate-ai",
+  },
   {
     icon: Package,
     gradient: "from-cyan-600 to-emerald-500",

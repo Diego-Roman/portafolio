@@ -22,7 +22,7 @@ const CATEGORIES: Category[] = [
     gradient: "from-emerald-500 to-teal-500",
     glowColor: "group-hover:shadow-emerald-900/30",
     title: "Backend & BD",
-    skills: ["Python", "FastAPI", "Supabase", "PostgreSQL", "REST APIs"],
+    skills: ["Python", "FastAPI", "Supabase", "PostgreSQL", "Neon", "Render", "REST APIs"],
   },
   {
     icon: Zap,
